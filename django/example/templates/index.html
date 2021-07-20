@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>django</title>
+    </head>
+    <body>
+        {% if userinfo %}
+            <p>
+                You are logged in.
+            </p>
+            <dl>
+                <dt><code>sub</code></dt>
+                <dd><code>{{ userinfo.sub }}</code></dd>
+                <dt><code>name</code></dt>
+                <dd><code>{{ userinfo.name }}</code></dd>
+                <dt><code>email</code></dt>
+                <dd><code>{{ userinfo.email }}</code></dd>
+            </dl>
+            <p>
+                <a href="/logout">Log out</a>.
+            </p>
+        {% else %}
+            <p>
+                You are not logged in. <a href="/login">Log in</a>.
+            </p>
+        {% endif %}
+    </body>
+</html>
