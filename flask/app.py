@@ -31,6 +31,7 @@ oauth.register(
     server_metadata_url=os.environ.get("SERVER_METADATA_URL")
 )
 
+
 # Decorator to require login
 def login_required(f):
     @wraps(f)
