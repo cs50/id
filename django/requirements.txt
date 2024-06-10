@@ -1,2 +1,2 @@
 Authlib==0.15.4
-Django==3.2.20
+Django==3.2.25
