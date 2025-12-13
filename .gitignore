@@ -1,3 +1,4 @@
 .*
 !.gitignore
 flask_session/
+node_modules
