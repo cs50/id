@@ -7,25 +7,25 @@
         <title>nodejs</title>
     </head>
     <body>
-        <%if (userinfo) {%>
+        <% if (userinfo) { %>
             <p>
                 You are logged in.
             </p>
             <dl>
                 <dt><code>sub</code></dt>
-                <dt><code><%=userinfo.sub%></code></dt>
+                <dd><code><%= userinfo.sub %></code></dd>
                 <dt><code>name</code></dt>
-                <dt><code><%=userinfo.name%></code></dt>
+                <dd><code><%= userinfo.name %></code></dd>
                 <dt><code>email</code></dt>
-                <dt><code><%=userinfo.email%></code></dt>
+                <dd><code><%= userinfo.email %></code></dd>
             </dl>
             <p>
                 <a href="/logout">Log out</a>.
             </p>
-        <%} else {%>
+        <% } else { %>
             <p>
                 You are not logged in. <a href="/login">Log in</a>.
             </p>
-        <%}%>
+        <% } %>
     </body>
 </html>

@@ -1,6 +1,8 @@
 ## How to run
+
 ```
 npm install
 node app.js
 ```
-App runs on port 3000 by default.
+
+App runs on port 8080 by default.

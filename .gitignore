@@ -1,4 +1,6 @@
 .*
 !.gitignore
 flask_session/
-node_modules
+node_modules/
+package-lock.json
+sessions/
