@@ -1,6 +1,6 @@
 import os
 
-from authlib.integrations.flask_client import OAuth
+from authlib.integrations.flask_client import OAuth, OAuthError
 from flask import Flask, abort, redirect, render_template, request, session, url_for
 from flask_session import Session
 from functools import wraps
@@ -31,6 +31,7 @@ oauth.register(
     server_metadata_url=os.environ.get("SERVER_METADATA_URL")
 )
 
+
 # Decorator to require login
 def login_required(f):
     @wraps(f)
@@ -48,8 +49,10 @@ def index():
 
 @app.route("/callback")
 def callback():
-    token = oauth.cs50.authorize_access_token()
-    session["userinfo"] = oauth.cs50.parse_id_token(token)
+    try:
+        session["userinfo"] = oauth.cs50.authorize_access_token()["userinfo"]
+    except OAuthError:
+        abort(410)
     return redirect(url_for("index"))
 
 
